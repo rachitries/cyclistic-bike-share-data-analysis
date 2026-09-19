@@ -21,9 +21,7 @@ This project focuses on question 1: analyzing usage patterns between the two rid
 - Provided by Motivate International Inc.
 - Given data includes ride_id, rideadble_type, start/end date-time, start/end station id, name and latitude/longitude and rider_type (member/casual).
 - Download data [here](https://divvy-tripdata.s3.amazonaws.com/index.html)
-
 - Raw data was not uploaded to GitHub because of large file sizes.
-
 
 ## Tools & Workflow
 
@@ -31,16 +29,19 @@ This project focuses on question 1: analyzing usage patterns between the two rid
 |---|---|
 | Data cleaning & preparation | Python (Pandas) |
 | Data storage | PostgreSQL |
-| Data analysis | SQL (PostgreSQL) |
+| Data analysis | SQL |
 | Visualization & dashboard | Tableau |
 | Version control & documentation | Git/GitHub |
 
 **Process:**
 
-1. Combined and cleaned all 12 monthly CSV files using Pandas ([`data-cleaning-script.py`](data-cleaning-script.py) / [`data-cleaning.ipynb`](data-cleaning.ipynb)): renamed columns, handled missing values, removed duplicates, standardized column formats, corrected data types (timestamps), and calculated derived fields such as ride_length_minutes, hour, day_of_week and month.
+1. Combined and cleaned all 12 monthly CSV files using Pandas ([`data-cleaning-script.py`](data-cleaning-script.py) / [`data-cleaning.ipynb`](data-cleaning.ipynb)):
+   - Handled missing values, removed duplicates, standardized column formats, corrected data types (timestamps), renamed columns, and calculated derived fields such as ride_length_minutes, hour, day_of_week and month.
 2. Loaded the cleaned dataset into PostgreSQL for structured querying.
-3. Wrote SQL queries (see `SQL queries/`) to explore ride patterns by rider type, time of day, day of week, season, and station popularity.
-4. Built an interactive dashboard in Tableau (see `viz/`) to visualize key differences between member and casual rider behavior.
+3. Wrote SQL queries:
+   - See [`sql-queries/`](sql-queries/) to explore ride patterns by rider type, time of day, day of week, season, and station popularity.
+4. Built an interactive dashboard and visualizations in Tableau:
+   - See [`viz/`](viz/) to explore key differences between Cyclistic member and casual rider behavior.
 
 
 ## Key Findings
@@ -55,11 +56,10 @@ This project focuses on question 1: analyzing usage patterns between the two rid
 
 🔗 **[View the interactive Tableau dashboard here](https://public.tableau.com/views/CyclisticBikeShare_17892334105490/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**
 
-All visualizations can be accessed from the dashboard or [`viz/`](viz/).
 
 ## How to Reproduce the Analysis
 
-### Repository Structure
+ Repository Structure
 
 ```
 cyclistic-bike-share-case-study/
@@ -86,7 +86,8 @@ cyclistic-bike-share-case-study/
 ```
  
 2. **Get the raw data**
-   Download the 12 months of trip data from [here](https://divvy-tripdata.s3.amazonaws.com/index.html) and place the CSV files into `data/raw/`.
+   - Download the 12 months of trip data from [here](https://divvy-tripdata.s3.amazonaws.com/index.html) and place the CSV files into `data/raw/`.
+     
 3. **Run the cleaning script**
 ```bash
    python data-cleaning-script.py
@@ -96,15 +97,18 @@ cyclistic-bike-share-case-study/
 4. **Load into PostgreSQL**
    - Create a local database manually (e.g. `CREATE DATABASE cyclistic;`) or run [`create_database.sql`](sql-queries/create_database.sql).
    - To create a table run [`create_table.sql`](sql-queries/create_table.sql).
-   - Load the cleaned CSV into your table through pgAdmin4 or use 
+   - Load the cleaned CSV into your table through GUI manually or use this command
       ```bash
          \copy trips FROM '/path/to/your/file.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',');
       ``` 
-      *(REPLACE '/path/to/your/file.csv' with your actual file path.)*
+      **NOTE: replace '/path/to/your/file.csv' with your actual file path.**
+     
 5. **Run the analysis queries**
-   Open the scripts in [`sql-queries/`](sql-queries) and run them against your PostgreSQL database. Outputs used for visualization are saved to `data/analysis/`.
+   - Open the scripts in [`sql-queries/`](sql-queries) and run them against your PostgreSQL database. Outputs used for visualization are saved to `data/analysis/`.
+     
 6. **Explore the dashboard**
-   Open the [Tableau workbook](viz/cyclistic_bike_share_dashboard.twbx), or view it live [here](https://public.tableau.com/views/CyclisticBikeShare_17892334105490/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
+   - Explore [Live Tableau interactive dashboard](https://public.tableau.com/views/CyclisticBikeShare_17892334105490/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+   - Or open the [Tableau workbook](viz/cyclistic_bike_share_dashboard.twbx)
 
 
 
@@ -121,7 +125,4 @@ The analysis shows a clear behavioral distinction between Cyclistic's two rider 
 
 
 ## Author
-
-**[Rachit Maurya]**
-[LinkedIn](linkedin.com/in/rachit-maurya-56194a391)
-[X](https://x.com/rachitries)
+**Rachit Maurya**: [LinkedIn](linkedin.com/in/rachit-maurya-56194a391), [X](https://x.com/rachitries)
