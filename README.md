@@ -125,4 +125,4 @@ The analysis shows a clear behavioral distinction between Cyclistic's two rider 
 
 
 ## Author
-**Rachit Maurya**: [LinkedIn](linkedin.com/in/rachit-maurya-56194a391), [X](https://x.com/rachitries)
+**Rachit Maurya**: [LinkedIn](https://www.linkedin.com/in/rachit-maurya-56194a391/), [X](https://x.com/rachitries)
