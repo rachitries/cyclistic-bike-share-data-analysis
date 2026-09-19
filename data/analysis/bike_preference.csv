@@ -1,0 +1,5 @@
+"rider_type","rideable_type","total_rides","percentage_within_rider_type"
+"casual","electric_bike",1538686,71.53
+"casual","classic_bike",612299,28.47
+"member","electric_bike",2607885,67.10
+"member","classic_bike",1278907,32.90

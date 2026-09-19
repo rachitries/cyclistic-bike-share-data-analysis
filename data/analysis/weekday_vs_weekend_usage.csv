@@ -1,0 +1,5 @@
+"rider_type","day_type","total_rides","avg_ride_length"
+"casual","Weekday",1336326,19.35
+"casual","Weekend",814659,24.35
+"member","Weekday",2976961,12.03
+"member","Weekend",909831,13.60

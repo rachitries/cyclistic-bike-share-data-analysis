@@ -1,0 +1,10 @@
+.venv/
+.vscode/
+archive/
+data/raw/*
+!data/raw/README.md
+data/cleaned/*
+!data/cleaned/.gitkeep
+test.py
+test.ipynb
+duckdb.ipynb
