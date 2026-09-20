@@ -15,6 +15,7 @@ Cyclistic's finance team has concluded that annual members are far more profitab
 
 This project focuses on question 1: analyzing usage patterns between the two rider types.
 
+
 ## Data
 
 - 12 months of historical trip data **(August 2025 - July 2026)**.
@@ -22,6 +23,7 @@ This project focuses on question 1: analyzing usage patterns between the two rid
 - Given data includes ride_id, rideadble_type, start/end date-time, start/end station id, name and latitude/longitude and rider_type (member/casual).
 - Download data [here](https://divvy-tripdata.s3.amazonaws.com/index.html)
 - Raw data was not uploaded to GitHub because of large file sizes.
+
 
 ## Tools & Workflow
 
@@ -32,6 +34,7 @@ This project focuses on question 1: analyzing usage patterns between the two rid
 | Data analysis | SQL |
 | Visualization & dashboard | Tableau |
 | Version control & documentation | Git/GitHub |
+
 
 **Process:**
 
@@ -49,6 +52,7 @@ This project focuses on question 1: analyzing usage patterns between the two rid
 - Casual riders tend to take longer and more leisure-oriented rides, while members show more routine usage.
 - Member usage peaks during weekday commute hours; casual usage peaks on weekends.
 - Ride volume is highest in summer months for both groups, but the seasonal swing is sharper for casual riders.
+
 
 ## Dashboard
 
@@ -79,9 +83,20 @@ cyclistic-bike-share-case-study/
 1. **Clone the repo and install dependencies**
 ```bash
    git clone https://github.com/rachitries/cyclistic-bike-share-data-analysis.git
+
    cd cyclistic-bike-share-data-analysis
+
    python -m venv .venv
-   source .venv/bin/activate      # on Windows: .venv\Scripts\activate
+
+   # on Unix-based systems (Linux and MacOS):
+      source .venv/bin/activate
+
+   # on Windows (PowerShell):      
+      .venv\Scripts\activate
+      # if it gives error:
+         Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+         .venv\Scripts\activate
+
    pip install -r requirements.txt
 ```
  
@@ -111,12 +126,12 @@ cyclistic-bike-share-case-study/
    - Or open the [Tableau workbook](viz/cyclistic_bike_share_dashboard.twbx)
 
 
-
 ## Recommendations
 
 1. Launch a weekend-focused membership promotion targeting casual riders.
 2. Highlight cost savings of membership for riders who already take frequent long trips.
 3. Use targeted digital ads at high-traffic casual-rider stations during peak season.
+4. Promote their preferred bike type.
 
 
 ## Conclusion
